@@ -4,6 +4,7 @@
 ![Tamanho do repositório](https://img.shields.io/github/repo-size/andregvg/php-mvc-starter)
 ![PHP](https://img.shields.io/badge/PHP-%5E8.0-blue)
 ![Code Quality](https://img.shields.io/badge/qualidade--do--código-A-brightgreen)
+![Licença](https://img.shields.io/github/license/andregvg/php-mvc-starter)
 
 Este repositório é um esqueleto (starter kit) para novos projetos pessoais PHP seguindo o padrão MVC, com organização moderna, suporte a variáveis de ambiente e uso do Composer.
 
