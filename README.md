@@ -1,12 +1,20 @@
 # PHP MVC Starter
 
-Este repositório é uma estrutura base para novos projetos pessoais em PHP, utilizando o padrão MVC, PSR-4 e suporte opcional ao uso de variáveis de ambiente com `vlucas/phpdotenv`.
+![Último commit](https://img.shields.io/github/last-commit/andregvg/php-mvc-starter?label=último%20commit)
+![Tamanho do repositório](https://img.shields.io/github/repo-size/andregvg/php-mvc-starter)
+![Licença](https://img.shields.io/github/license/andregvg/php-mvc-starter)
+![PHP](https://img.shields.io/badge/PHP-%5E8.0-blue)
+![Versão](https://img.shields.io/badge/versão-0.1.0-blueviolet)
+![Dependências](https://img.shields.io/badge/composer--dependencies-up%20to%20date-brightgreen)
+![Code Quality](https://img.shields.io/badge/qualidade--do--código-A-brightgreen)
+
+Este repositório é um esqueleto (starter kit) para novos projetos pessoais PHP seguindo o padrão MVC, com organização moderna, suporte a variáveis de ambiente com `vlucas/phpdotenv` e uso do Composer.
 
 ---
 
-## Estrutura de Pastas
+## Estrutura de Diretórios
 
-```
+```bash
 php-mvc-starter/
 │
 ├── app/
@@ -27,131 +35,133 @@ php-mvc-starter/
 │
 ├── public/
 │   ├── index.php
+│   ├── .htaccess
 │   ├── css/
 │   ├── js/
 │   └── imagens/
 │
 ├── .gitignore-example
 ├── .env-example
+├── .htaccess-example
 ├── composer.json
 └── README.md
 ```
 
 ---
 
-## Como utilizar este repositório para iniciar um novo projeto
+## Como iniciar um novo projeto com este repositório
 
-### 1. Clone este repositório
+### 1. Clone o repositório base
+
 ```bash
-git clone https://github.com/andregvg/php-mvc-starter.git nome-do-projeto
-cd nome-do-projeto
+git clone https://github.com/andregvg/php-mvc-starter.git novo-projeto
+cd novo-projeto
 ```
 
-### 2. Inicie o Git para o novo projeto
-```bash
-git init
-git add .
-git commit -m "Início do projeto baseado no php-mvc-starter"
-```
+--
 
----
+### 2. Instale as dependências do Composer
 
-## Configuração do Composer
-
-### 3. Instale as dependências do Composer
 ```bash
 composer install
 ```
 
-### 4. Atualize o `composer.json` com o nome do seu projeto
+--
 
-Abra o `composer.json` e altere os campos:
+### 3. Renomeie os arquivos de exemplo
+
+```bash
+mv .env-example .env
+mv .gitignore-example .gitignore
+mv .htaccess-example public/.htaccess
+```
+
+--
+
+### 4. Configure o `.env`
+
+Abra o arquivo `.env` e edite as variáveis conforme necessário. Exemplo:
+
+```
+APP_NAME="Meu Projeto"
+APP_ENV=development
+DB_HOST=localhost
+DB_NAME=nome_banco
+DB_USER=root
+DB_PASS=senha
+```
+
+#### Importante sobre o `.env`
+
+- **Valores com espaços devem ser entre aspas**. Se os valores não estiverem entre aspas, o carregamento falhará com erro de parsing.
+
+--
+
+### 5. Ajuste o RewriteBase do `.htaccess`
+
+Abra o arquivo `public/.htaccess` e altere `RewriteBase` para o diretório correto de `public`:
+
+```apacheconf
+RewriteBase /novo-projeto/public/
+```
+
+---
+
+###  Sobre os arquivos principais
+
+##### `.env`
+Armazena variáveis de ambiente como configurações do app, conexões de banco etc, que não devem ser versionadas.
+
+##### `.gitignore`
+Define quais arquivos e pastas devem ser ignorados pelo Git.
+
+##### `composer.json`
+Gerencia dependências do projeto, autoloading e metadados (nome, autor, etc).
+É usado para gerenciar dependências e autoload do seu projeto.
+
+- Já está configurado com `autoload` PSR-4
+- Inclui o pacote `vlucas/phpdotenv` para carregar variáveis do `.env`
+
+##### `.htaccess`
+Redireciona URLs para `index.php`. Essencial para rotas limpas e amigáveis.
+
+--
+
+## E se eu não quiser usar o `.env`?
+
+Você pode optar por remover a dependência do `vlucas/phpdotenv` e configurar as variáveis em constantes diretamente no `config.php`. Este pacote permite carregar variáveis do `.env` no PHP como `$_ENV` e `$_SERVER`. Evita deixar configurações sensíveis no código.
+
+Se decidir **não usá-lo**:
+
+1. Remover a linha de uso no `composer.json`:
 
 ```json
-"name": "vendor/novo-projeto",
-"description": "Descrição do novo projeto",
-"authors": [
-  {
-    "name": "Seu Nome",
-    "email": "seu@email.com"
-  }
-]
+"vlucas/phpdotenv": "^5.5"
 ```
 
----
-
-## Arquivos de configuração
-
-### .gitignore
-
-Define os arquivos e diretórios que o Git deve ignorar.
-
-> Após clonar, renomeie `.gitignore-example` para `.gitignore`:
-```bash
-mv .gitignore-example .gitignore
-```
-
----
-
-### .env
-
-Armazena variáveis sensíveis e de configuração.
-
-> Após clonar, copie `.env-example` para `.env`:
-```bash
-cp .env-example .env
-```
-
-Edite os valores conforme seu ambiente:
-
-```
-APP_NAME=Novo-Projeto
-APP_ENV=local
-APP_DEBUG=true
-APP_URL=http://localhost
-
-DB_HOST=localhost
-DB_NAME=meubanco
-DB_USER=root
-DB_PASS=
-```
-
----
-
-## Sobre o uso de `vlucas/phpdotenv`
-
-Este pacote carrega as variáveis do `.env` para o ambiente PHP (`$_ENV`).
-
-### Se decidir **não usar**:
-
-1. Remova a dependência:
-   ```bash
-   composer remove vlucas/phpdotenv
-   ```
-
-2. Remova a chamada no `public/index.php`:
-   ```php
-   use Dotenv\Dotenv;
-   $dotenv = Dotenv::createImmutable(__DIR__ . '/../');
-   $dotenv->load();
-   ```
-
----
-
-## Resumo dos comandos iniciais
+2. Rodar:
 
 ```bash
-# Clonar e iniciar novo projeto
-git clone https://github.com/andregvg/php-mvc-starter.git nome-do-projeto
-cd nome-do-projeto
+composer update
+```
+ 
+ Também será necessário remover as referências po `public/index.php`:
+
+---
+
+### Inicializando  novo repositório Git
+
+```bash
 git init
 git add .
-git commit -m "Início do projeto baseado no php-mvc-starter"
-
-# Renomear arquivos de configuração
-mv .gitignore-example .gitignore
-cp .env-example .env
-
-# Instalar dependências do Composer
-composer install
+git commit -m "Primeiro commit do NOVO-PROJETO baseado no php-mvc-starter"
+git remote add origin https://github.com/USUARIO/NOME_DO_REPOSITORIO.git
+git push -u origin master
 ```
+
+---
+
+
+> Criado por [agvg](mailto:agvg@gmail.com) 
+
+
