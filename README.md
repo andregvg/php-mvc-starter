@@ -55,15 +55,11 @@ git clone https://github.com/andregvg/php-mvc-starter.git novo-projeto
 cd novo-projeto
 ```
 
---
-
 ### 2. Instale as dependências do Composer
 
 ```bash
 composer install
 ```
-
---
 
 ### 3. Renomeie os arquivos de exemplo
 
@@ -72,8 +68,6 @@ mv .env-example .env
 mv .gitignore-example .gitignore
 mv .htaccess-example public/.htaccess
 ```
-
---
 
 ### 4. Configure o `.env`
 
@@ -87,12 +81,7 @@ DB_NAME=nome_banco
 DB_USER=root
 DB_PASS=senha
 ```
-
-#### Importante
-
-**Valores com espaços devem ser entre aspas**
-
---
+**IMPORTANTE!** Valores com espaços devem ser entre aspas.
 
 ### 5. Ajuste o RewriteBase do `.htaccess`
 
@@ -101,6 +90,19 @@ Abra o arquivo `public/.htaccess` e altere `RewriteBase` para apontar corretamen
 ```apacheconf
 RewriteBase /novo-projeto/public/
 ```
+
+### 6. Inicializando novo repositório Git
+
+```bash
+git init
+git add .
+git commit -m "Primeiro commit do NOVO-PROJETO baseado no php-mvc-starter"
+git remote add origin https://github.com/USUARIO/NOME_DO_REPOSITORIO.git
+git push -u origin master
+```
+
+---
+
 
 ##  Observações
 
@@ -143,17 +145,7 @@ composer update
  Também será necessário remover as referências em `public/index.php`:
 
 
-## Inicializando  novo repositório Git
 
-```bash
-git init
-git add .
-git commit -m "Primeiro commit do NOVO-PROJETO baseado no php-mvc-starter"
-git remote add origin https://github.com/USUARIO/NOME_DO_REPOSITORIO.git
-git push -u origin master
-```
-
----
 
 
 > Criado por [agvg](mailto:agvg@gmail.com) 
