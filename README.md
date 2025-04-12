@@ -8,7 +8,7 @@
 ![Dependências](https://img.shields.io/badge/composer--dependencies-up%20to%20date-brightgreen)
 ![Code Quality](https://img.shields.io/badge/qualidade--do--código-A-brightgreen)
 
-Este repositório é um esqueleto (starter kit) para novos projetos pessoais PHP seguindo o padrão MVC, com organização moderna, suporte a variáveis de ambiente com `vlucas/phpdotenv` e uso do Composer.
+Este repositório é um esqueleto (starter kit) para novos projetos pessoais PHP seguindo o padrão MVC, com organização moderna, suporte a variáveis de ambiente e uso do Composer.
 
 ---
 
@@ -49,7 +49,7 @@ php-mvc-starter/
 
 ---
 
-## Como iniciar um novo projeto com este repositório
+## Como iniciar um novo projeto
 
 ### 1. Clone o repositório base
 
@@ -91,15 +91,15 @@ DB_USER=root
 DB_PASS=senha
 ```
 
-#### Importante sobre o `.env`
+#### Importante
 
-- **Valores com espaços devem ser entre aspas**. Se os valores não estiverem entre aspas, o carregamento falhará com erro de parsing.
+**Valores com espaços devem ser entre aspas**
 
 --
 
 ### 5. Ajuste o RewriteBase do `.htaccess`
 
-Abra o arquivo `public/.htaccess` e altere `RewriteBase` para o diretório correto de `public`:
+Abra o arquivo `public/.htaccess` e altere `RewriteBase` para apontar corretamente à `public` na estrutura de diretórios:
 
 ```apacheconf
 RewriteBase /novo-projeto/public/
@@ -133,7 +133,7 @@ Você pode optar por remover a dependência do `vlucas/phpdotenv` e configurar a
 
 Se decidir **não usá-lo**:
 
-1. Remover a linha de uso no `composer.json`:
+1. Remover a linha `composer.json`:
 
 ```json
 "vlucas/phpdotenv": "^5.5"
@@ -145,7 +145,7 @@ Se decidir **não usá-lo**:
 composer update
 ```
  
- Também será necessário remover as referências po `public/index.php`:
+ Também será necessário remover as referências em `public/index.php`:
 
 ---
 
