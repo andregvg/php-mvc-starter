@@ -4,7 +4,7 @@ Este repositório é uma estrutura base para novos projetos pessoais em PHP, uti
 
 ---
 
-## ✅ Estrutura de Pastas
+## Estrutura de Pastas
 
 ```
 php-mvc-starter/
@@ -39,7 +39,7 @@ php-mvc-starter/
 
 ---
 
-## 🚀 Como utilizar este repositório para iniciar um novo projeto
+## Como utilizar este repositório para iniciar um novo projeto
 
 ### 1. Clone este repositório
 ```bash
@@ -49,7 +49,6 @@ cd nome-do-projeto
 
 ### 2. Inicie o Git para o novo projeto
 ```bash
-rm -rf .git
 git init
 git add .
 git commit -m "Início do projeto baseado no php-mvc-starter"
@@ -57,7 +56,7 @@ git commit -m "Início do projeto baseado no php-mvc-starter"
 
 ---
 
-## ⚙️ Configuração do Composer
+## Configuração do Composer
 
 ### 3. Instale as dependências do Composer
 ```bash
@@ -69,8 +68,8 @@ composer install
 Abra o `composer.json` e altere os campos:
 
 ```json
-"name": "agvg/novo-projeto",
-"description": "Descrição do meu novo projeto",
+"name": "vendor/novo-projeto",
+"description": "Descrição do novo projeto",
 "authors": [
   {
     "name": "Seu Nome",
@@ -81,7 +80,7 @@ Abra o `composer.json` e altere os campos:
 
 ---
 
-## 📂 Arquivos de configuração
+## Arquivos de configuração
 
 ### .gitignore
 
@@ -106,7 +105,7 @@ cp .env-example .env
 Edite os valores conforme seu ambiente:
 
 ```
-APP_NAME=Meu Projeto
+APP_NAME=Novo-Projeto
 APP_ENV=local
 APP_DEBUG=true
 APP_URL=http://localhost
@@ -119,7 +118,7 @@ DB_PASS=
 
 ---
 
-## 🔒 Sobre o uso de `vlucas/phpdotenv`
+## Sobre o uso de `vlucas/phpdotenv`
 
 Este pacote carrega as variáveis do `.env` para o ambiente PHP (`$_ENV`).
 
@@ -137,17 +136,14 @@ Este pacote carrega as variáveis do `.env` para o ambiente PHP (`$_ENV`).
    $dotenv->load();
    ```
 
-3. Configure as variáveis diretamente no código ou via `php.ini`.
-
 ---
 
-## 📘 Resumo dos comandos iniciais
+## Resumo dos comandos iniciais
 
 ```bash
 # Clonar e iniciar novo projeto
 git clone https://github.com/andregvg/php-mvc-starter.git nome-do-projeto
 cd nome-do-projeto
-rm -rf .git
 git init
 git add .
 git commit -m "Início do projeto baseado no php-mvc-starter"
