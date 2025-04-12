@@ -1,0 +1,20 @@
+{
+  "name": "agvg/php-mvc-starter",
+  "description": "Estrutura base para novos projetos pessoais em PHP",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "agvg",
+      "email": "agvg@gmail.com"
+    }
+  ],
+  "require": {
+    "vlucas/phpdotenv": "^5.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  }
+}
