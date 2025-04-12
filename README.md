@@ -101,9 +101,6 @@ git remote add origin https://github.com/USUARIO/NOME_DO_REPOSITORIO.git
 git push -u origin master
 ```
 
----
-
-
 ##  Observações
 
 ##### `.env`
@@ -144,9 +141,7 @@ composer update
  
  Também será necessário remover as referências em `public/index.php`:
 
-
-
-
+---
 
 > Criado por [agvg](mailto:agvg@gmail.com) 
 
