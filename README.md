@@ -10,7 +10,6 @@
 
 Este repositório é um esqueleto (starter kit) para novos projetos pessoais PHP seguindo o padrão MVC, com organização moderna, suporte a variáveis de ambiente e uso do Composer.
 
----
 
 ## Estrutura de Diretórios
 
@@ -46,8 +45,6 @@ php-mvc-starter/
 ├── composer.json
 └── README.md
 ```
-
----
 
 ## Como iniciar um novo projeto
 
@@ -105,9 +102,7 @@ Abra o arquivo `public/.htaccess` e altere `RewriteBase` para apontar corretamen
 RewriteBase /novo-projeto/public/
 ```
 
----
-
-###  Sobre os arquivos principais
+##  Observações
 
 ##### `.env`
 Armazena variáveis de ambiente como configurações do app, conexões de banco etc, que não devem ser versionadas.
@@ -127,7 +122,7 @@ Redireciona URLs para `index.php`. Essencial para rotas limpas e amigáveis.
 
 --
 
-## E se eu não quiser usar o `.env`?
+### E se eu não quiser usar o `.env`?
 
 Você pode optar por remover a dependência do `vlucas/phpdotenv` e configurar as variáveis em constantes diretamente no `config.php`. Este pacote permite carregar variáveis do `.env` no PHP como `$_ENV` e `$_SERVER`. Evita deixar configurações sensíveis no código.
 
@@ -147,9 +142,8 @@ composer update
  
  Também será necessário remover as referências em `public/index.php`:
 
----
 
-### Inicializando  novo repositório Git
+## Inicializando  novo repositório Git
 
 ```bash
 git init
