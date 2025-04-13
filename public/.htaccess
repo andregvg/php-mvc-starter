@@ -1,7 +1,10 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteBase /php-mvc-starter/public/
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^ index.php [QSA,L]
+    
+     # Impede que usuários vejam o conteúdo de diretórios sem um index.
+    Options All -Indexes
+    
+    RewriteCond %{REQUEST_FILENAME} !-f # Se não for um arquivo existente
+    RewriteCond %{REQUEST_FILENAME} !-d # Se não for um diretório existente
+    RewriteRule . index.php [QSA,L] # Redireciona para index.php
 </IfModule>
