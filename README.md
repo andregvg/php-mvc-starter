@@ -84,7 +84,6 @@ DB_PASS=senha
 ![Último commit](https://img.shields.io/github/last-commit/andregvg/php-starter?label=último%20commit)
 ![Tamanho do repositório](https://img.shields.io/github/repo-size/andregvg/php-starter)
 ![PHP](https://img.shields.io/badge/PHP-%5E8.0-blue)
-![Code Quality](https://img.shields.io/badge/qualidade--do--código-A-brightgreen)
 ![Licença](https://img.shields.io/github/license/andregvg/php-starter)
 
 Este repositório é um esqueleto (starter kit) para novos projetos pessoais PHP seguindo o padrão MVC, com organização moderna, suporte a variáveis de ambiente e uso do Composer.
@@ -221,7 +220,5 @@ composer update
  Também será necessário remover as referências em `public/index.php`:
 
 ---
-
-> Criado por [agvg](mailto:agvg@gmail.com) 
 
 
