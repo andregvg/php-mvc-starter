@@ -1,10 +1,10 @@
-# PHP MVC Starter
+# PHP Starter
 
-![Último commit](https://img.shields.io/github/last-commit/andregvg/php-mvc-starter?label=último%20commit)
-![Tamanho do repositório](https://img.shields.io/github/repo-size/andregvg/php-mvc-starter)
+![Último commit](https://img.shields.io/github/last-commit/andregvg/php-starter?label=último%20commit)
+![Tamanho do repositório](https://img.shields.io/github/repo-size/andregvg/php-starter)
 ![PHP](https://img.shields.io/badge/PHP-%5E8.0-blue)
 ![Code Quality](https://img.shields.io/badge/qualidade--do--código-A-brightgreen)
-![Licença](https://img.shields.io/github/license/andregvg/php-mvc-starter)
+![Licença](https://img.shields.io/github/license/andregvg/php-starter)
 
 Este repositório é um esqueleto (starter kit) para novos projetos pessoais PHP seguindo o padrão MVC, com organização moderna, suporte a variáveis de ambiente e uso do Composer.
 
@@ -12,7 +12,7 @@ Este repositório é um esqueleto (starter kit) para novos projetos pessoais PHP
 ## Estrutura de Diretórios
 
 ```bash
-php-mvc-starter/
+php-starter/
 │
 ├── app/
 │   ├── Controllers/
@@ -49,7 +49,88 @@ php-mvc-starter/
 ### 1. Clone o repositório base
 
 ```bash
-git clone https://github.com/andregvg/php-mvc-starter.git novo-projeto
+git clone https://github.com/andregvg/php-starter.git novo-projeto
+cd novo-projeto
+```
+
+### 2. Instale as dependências do Composer
+
+```bash
+composer install
+```
+
+### 3. Renomeie os arquivos de exemplo
+
+```bash
+mv .env-example .env
+mv .gitignore-example .gitignore
+mv .htaccess-example public/.htaccess
+```
+
+### 4. Configure o `.env`
+
+Abra o arquivo `.env` e edite as variáveis conforme necessário. Exemplo:
+
+```
+APP_NAME="Meu Projeto"
+APP_ENV=development
+DB_HOST=localhost
+DB_NAME=nome_banco
+DB_USER=root
+DB_PASS=senha
+```
+# PHP Starter
+
+![Último commit](https://img.shields.io/github/last-commit/andregvg/php-starter?label=último%20commit)
+![Tamanho do repositório](https://img.shields.io/github/repo-size/andregvg/php-starter)
+![PHP](https://img.shields.io/badge/PHP-%5E8.0-blue)
+![Code Quality](https://img.shields.io/badge/qualidade--do--código-A-brightgreen)
+![Licença](https://img.shields.io/github/license/andregvg/php-starter)
+
+Este repositório é um esqueleto (starter kit) para novos projetos pessoais PHP seguindo o padrão MVC, com organização moderna, suporte a variáveis de ambiente e uso do Composer.
+
+
+## Estrutura de Diretórios
+
+```bash
+php-starter/
+│
+├── app/
+│   ├── Controllers/
+│   ├── Models/
+│   ├── Views/
+│   ├── Core/
+│   └── Services/
+│
+├── config/
+│   └── config.php
+│
+├── routes/
+│   └── routes.php
+│
+├── storage/
+│   └── logs/
+│
+├── public/
+│   ├── index.php
+│   ├── .htaccess
+│   ├── css/
+│   ├── js/
+│   └── imagens/
+│
+├── .gitignore-example
+├── .env-example
+├── .htaccess-example
+├── composer.json
+└── README.md
+```
+
+## Como iniciar um novo projeto
+
+### 1. Clone o repositório base
+
+```bash
+git clone https://github.com/andregvg/php-starter.git novo-projeto
 cd novo-projeto
 ```
 
@@ -94,7 +175,7 @@ RewriteBase /novo-projeto/public/
 ```bash
 git init
 git add .
-git commit -m "Primeiro commit do NOVO-PROJETO baseado no php-mvc-starter"
+git commit -m "Primeiro commit do NOVO-PROJETO baseado no php-starter"
 git remote add origin https://github.com/USUARIO/NOME_DO_REPOSITORIO.git
 git push -u origin master
 ```
